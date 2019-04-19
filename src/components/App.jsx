@@ -1,11 +1,12 @@
 import React from 'react';
-import Navbar from './Navbar.jsx';
+import Navbar from './Navbar';
+import MainPage from './MainPage';
 
 function App() {
   return(
     <div>
       <Navbar />
-      <h1>App works</h1>
+      <MainPage />
     </div>
   );
 }

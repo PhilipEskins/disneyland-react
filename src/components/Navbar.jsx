@@ -49,8 +49,18 @@ function Navbar() {
           justify-content: space-between;
           align-items: center;
         }
-        .hideList {
+        .parks {
+          overflow: hidden;
+        }
+        .parksContent {
           display: none;
+          position: absolute;
+          overflow: hidden;
+          background-color: white;
+          z-index: 1;
+        }
+        .parks:hover .parksContent {
+          display: block;
         }
         .thingsToDo {
           overflow: hidden;
@@ -94,13 +104,15 @@ function Navbar() {
 
         <div className="lowerNav">
           <a href="#"><img src={logo} /></a>
-          <span>Parks & Tickets</span>
-          <ul className="hideList">
-            <li>Theme Parks</li>
-            <li>Tickets</li>
-            <li>Ticket Options</li>
-            <li>Photography</li>
-          </ul>
+          <div className="parks">
+            <span>Parks & Tickets</span>
+            <div className="parksContent">
+              <a href="#">Theme Parks</a><br />
+              <a href="#">Tickets</a><br />
+              <a href="#">Ticket Options</a><br />
+              <a href="#">Photography</a><br />
+            </div>
+          </div>
           <span>Places to Stay</span>
           <div className="thingsToDo">
             <span>Things to Do</span>

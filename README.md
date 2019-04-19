@@ -48,7 +48,7 @@ _This website uses HTML, CSS, JavaScript, Webpack, React, React Router and eslin
 ![Alt text](src/assets/img/components.jpeg?raw=true "Basic layout for Components")
 
 ### Pictures
-_Here are some pictures of the official Disneyland site at the time I tried cloning interface_
+_Here are some pictures of the official Disneyland site at the time I tried cloning the site._
 
 ![Alt text](src/assets/img/top.png?raw=true "Top of page")
 ![Alt text](src/assets/img/offers.png?raw=true "Offers and Benefits")

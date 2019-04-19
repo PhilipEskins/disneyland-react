@@ -66,6 +66,16 @@ module.exports = {
             name: 'images/[hash]-[name].[ext]'
           }
         }
+      },
+      {
+        test: /\.(mp4)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8000,
+            name: 'videos/[hash]-[name].[ext]'
+          }
+        }
       }
     ]
   },

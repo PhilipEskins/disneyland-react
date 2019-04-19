@@ -14,6 +14,7 @@ function VacationBar() {
           margin: auto;
           margin-top; 15px;
           background-color: white;
+          width: 80vw;
         }
         .title {
           grid-row: 1/3;

@@ -13,7 +13,6 @@ function VideoDisplay() {
           grid-row: 1/3;
           grid-column: 1;
           justify-self: center;
-          width: 100vw;
           z-index: -1;
         }
         .vidBanner {

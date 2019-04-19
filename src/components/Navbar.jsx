@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
 
 function Navbar() {
@@ -103,7 +104,7 @@ function Navbar() {
         </div>
 
         <div className="lowerNav">
-          <a href="#"><img src={logo} /></a>
+          <Link to='/'><img src={logo} /></Link>
           <div className="parks">
             <span>Parks & Tickets</span>
             <div className="parksContent">
@@ -117,7 +118,7 @@ function Navbar() {
           <div className="thingsToDo">
             <span>Things to Do</span>
             <div className="thingsToDoContent">
-              <a href="#">Attractions</a>
+              <Link to='/attractions'>Attractions</Link>
             </div>
           </div>
           <span>Annual Passports</span>

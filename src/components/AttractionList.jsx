@@ -9,6 +9,22 @@ const masterAttractionList = [
     type: ['Slow Rides', 'Dark', 'Loud'],
     location: 'Disneyland Park, Fantasyland',
     teaser: 'Take a topsy-turvy trip into the nonsensical world of Disney’s Alice in Wonderland aboard an oversized caterpillar.'
+  },
+  {
+    id: 'animation-academy',
+    name: 'Animation Academy',
+    height: 'Any Height',
+    type: ['Character Experience', 'Discovery', 'Indoor', 'Interactive'],
+    location: 'Disney California Adventure Park, Hollywood Land',
+    teaser: 'Draw your very own character sketch under the guidance of a talented animator.'
+  },
+  {
+    id: 'autopia',
+    name: 'Autopia',
+    height: '32in (81cm) or taller',
+    type: ['Slow Rides', 'Loud', '1955 Original Ride', 'Interactive', 'Rider Switch'],
+    location: 'Disneyland Park, Tomorrowland',
+    teaser: 'Put the pedal to the metal on an unforgettable road trip along a miniature motorway.'
   }
 ];
 

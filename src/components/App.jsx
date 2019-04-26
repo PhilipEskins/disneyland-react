@@ -62,18 +62,19 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state.selectedAttraction != null) {
-      let storage = this.state.selectedAttraction;
-      let name = storage.name;
-      console.log(this.state.masterAttractionList.name)
-    }
+    // if (this.state.selectedAttraction != null) {
+    //   let storage = this.state.masterAttractionList;
+    //   let temp = this.state.selectedAttraction;
+    //   let name = storage + temp;
+    //   console.log(name)
+    // }
     return(
       <div>
         <Navbar />
         <Switch>
           <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult} onChildren={this.handleChildren} adultNum={this.state.adults} childrenNum={this.state.children}/>} />
           <Route exact path='/attractions' render={()=> <AttractionList masterAttractionList={this.state.masterAttractionList} selectedAttraction={this.state.selectedAttraction} onChangingSelectedAttraction={this.handleChangingSelectedAttraction}/>} />
-          <Route path='/attractions/:attractionId' render={()=> <AttractionDetail name={this.state.masterAttractionList.storage }/> } />
+          <Route path='/attractions/:attractionId' component={AttractionDetail} />
           <Route component={Error404} />
         </Switch>
       </div>

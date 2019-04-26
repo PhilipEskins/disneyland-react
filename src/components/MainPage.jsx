@@ -1,6 +1,7 @@
 import React from 'react';
 import VacationBar from './VacationBar';
 import VideoDisplay from './VideoDisplay';
+import Offers from './Offers';
 import PropTypes from 'prop-types';
 
 function MainPage(props) {
@@ -25,6 +26,9 @@ function MainPage(props) {
       </div>
       <div className="videoDisplay">
         <VideoDisplay />
+      </div>
+      <div className="offers">
+        <Offers />
       </div>
     </div>
   );

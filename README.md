@@ -14,14 +14,18 @@ _This application is my attempt at cloning http://www.disneyland.com_
 * Nav bar stays on top if you scroll downloading
 * Attraction page (under Things to Do) lists three attractions (more to come)
 * Attraction information is currently hard coded
+* Can now add Adults and children
 
 ## Future Features
-* Add dynamic links to get more information on attractions
-* Get buttons to work to add more people to your party (currently its just hard coded)
+* Add dynamic links to get more information on attractions (in progress)
 * Build out at least one more section of the home page (ie Offers and Benefits)
 
 
 ## Process
+
+#### Friday 4/26/19
+_Got off to a great start with the project. Was able to get the buttons to add and remove people from the vacation bar. After that I tried to tackle displaying more details of attractions after you click on them. I ran into a wall and my brain sort of shut down. I came into the project with an idea of how to make it work, but it didn't pan out. Will think on it more over the weekend and if I still can't figure it out will get some assistance on Monday. Started work on the offers section in the meantime._
+
 #### Friday 4/19/19
 _Was able to pretty successfully recreate my angular Disneyland clone into React. Only thing missing is an attraction detail page, which I did try and get working but wasn't able to quite figure it out. I believe I'll be able to add it next week after I learn about states._
 

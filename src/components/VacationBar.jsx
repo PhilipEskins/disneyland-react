@@ -1,6 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function VacationBar() {
+function VacationBar(props) {
+
+  function adjustAdult() {
+    let newAdultNum = props.adultNum
+    newAdultNum++;
+    console.log(newAdultNum);
+    props.onAdult(newAdultNum);
+  }
+
   return(
     <div>
       <style jsx>{`
@@ -59,13 +68,13 @@ function VacationBar() {
         <span className="adultTitle">Adults(18+)</span>
         <div className="adult">
           <button className="adultSub">-</button>
-          <span className="adultNum">2</span>
-          <button className="adultAdd">+</button>
+          <span className="adultNum">{props.adultNum}</span>
+          <button className="adultAdd" onClick={adjustAdult}>+</button>
         </div>
         <span className="childTitle">Children</span>
         <div className="child">
           <button className="childSub">-</button>
-          <span className="childNum">0</span>
+          <span className="childNum">{props.childrenNum}</span>
           <button className="childAdd">+</button>
         </div>
         <span className="hotelTitle">Hotel</span>
@@ -77,6 +86,13 @@ function VacationBar() {
       </div>
     </div>
   );
+}
+
+VacationBar.propTypes = {
+  onAdult: PropTypes.func,
+  onChildren: PropTypes.func,
+  adultNum: PropTypes.number,
+  childrenNum: PropTypes.number
 }
 
 export default VacationBar;

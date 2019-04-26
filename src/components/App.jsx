@@ -18,6 +18,7 @@ class App extends React.Component {
   }
 
   handleAdult(newNum) {
+    console.log(newNum);
     this.setState({adults: newNum});
   }
 
@@ -30,7 +31,7 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult}} onChildren={this.handleChildren}/>} />
+          <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult} onChildren={this.handleChildren} adultNum={this.state.adults} childrenNum={this.state.children}/>} />
           <Route path='/attractions' component={AttractionList} />
           <Route path='/attractions/:attractionId' component={AttractionList} />
           <Route component={Error404} />

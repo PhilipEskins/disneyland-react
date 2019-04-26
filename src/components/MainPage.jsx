@@ -3,7 +3,7 @@ import VacationBar from './VacationBar';
 import VideoDisplay from './VideoDisplay';
 import PropTypes from 'prop-types';
 
-function MainPage() {
+function MainPage(props) {
   return (
     <div className="container">
       <style jsx> {`
@@ -21,7 +21,7 @@ function MainPage() {
         }
       `}</style>
       <div className="vacationBar">
-        <VacationBar />
+        <VacationBar onAdult = {props.onAdult} onChildren = {props.onChildren} adultNum={props.adultNum} childrenNum={props.childrenNum}/>
       </div>
       <div className="videoDisplay">
         <VideoDisplay />
@@ -32,7 +32,9 @@ function MainPage() {
 
 MainPage.propTypes = {
   onAdult: PropTypes.func,
-  onChildren: PropTypes.func
+  onChildren: PropTypes.func,
+  adultNum: PropTypes.number,
+  childrenNum: PropTypes.number
 }
 
 export default MainPage;

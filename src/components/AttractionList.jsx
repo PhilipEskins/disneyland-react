@@ -1,5 +1,6 @@
 import React from 'react';
 import Attractions from './Attractions';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function AttractionList(props) {
@@ -8,14 +9,12 @@ function AttractionList(props) {
       <hr/>
       {Object.keys(props.masterAttractionList).map(function (attractionId) {
         const attraction = props.masterAttractionList[attractionId];
-        return <Attractions name = {attraction.name}
-          url = {attraction.url}
-          teaser = {attraction.teaser}
+        return <Link to={"attractions/" + attraction.url} onClick={()=>props.onChangingSelectedAttraction(attractionId)}><Attractions name = {attraction.name}
           location = {attraction.location}
           height = {attraction.height}
           type = {attraction.type}
           key = {attractionId}
-        />;
+        /></Link>;
       })}
     </div>
   );
@@ -23,7 +22,9 @@ function AttractionList(props) {
 
 AttractionList.propTypes = {
   masterAttractionList: PropTypes.object,
-  attractionId: PropTypes.string
+  attractionId: PropTypes.string,
+  selectedAttraction: PropTypes.string,
+  onChangingSelectedAttraction: PropTypes.func
 };
 
 export default AttractionList;

@@ -13,10 +13,11 @@ class App extends React.Component {
     this.state = {
       adults: 2,
       children: 0,
+      selectedAttraction: null,
       masterAttractionList: {
         aliceInWonderland:
         {
-          url: 'alice-in-wonder',
+          url: 'alice-in-wonderland',
           name: 'Alice in Wonderland',
           height: 'Any Height',
           type: ['Slow Rides', 'Dark', 'Loud'],
@@ -45,6 +46,7 @@ class App extends React.Component {
     };
     this.handleAdult = this.handleAdult.bind(this);
     this.handleChildren = this.handleChildren.bind(this);
+    this.handleChangingSelectedAttraction = this.handleChangingSelectedAttraction.bind(this);
   }
 
   handleAdult(newNum) {
@@ -55,14 +57,23 @@ class App extends React.Component {
     this.setState({children: newNum});
   }
 
+  handleChangingSelectedAttraction(attractionId){
+    this.setState({selectedAttraction: attractionId});
+  }
+
   render() {
+    if (this.state.selectedAttraction != null) {
+      let storage = this.state.selectedAttraction;
+      let name = storage.name;
+      console.log(this.state.masterAttractionList.name)
+    }
     return(
       <div>
         <Navbar />
         <Switch>
           <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult} onChildren={this.handleChildren} adultNum={this.state.adults} childrenNum={this.state.children}/>} />
-          <Route exact path='/attractions' render={()=> <AttractionList masterAttractionList={this.state.masterAttractionList}/>} />
-          <Route path='/attractions/:attractionId' component={AttractionDetail} />
+          <Route exact path='/attractions' render={()=> <AttractionList masterAttractionList={this.state.masterAttractionList} selectedAttraction={this.state.selectedAttraction} onChangingSelectedAttraction={this.handleChangingSelectedAttraction}/>} />
+          <Route path='/attractions/:attractionId' render={()=> <AttractionDetail name={this.state.masterAttractionList.storage }/> } />
           <Route component={Error404} />
         </Switch>
       </div>

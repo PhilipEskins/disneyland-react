@@ -16,6 +16,7 @@ class App extends React.Component {
       masterAttractionList: {
         aliceInWonderland:
         {
+          url: 'alice-in-wonder',
           name: 'Alice in Wonderland',
           height: 'Any Height',
           type: ['Slow Rides', 'Dark', 'Loud'],
@@ -24,6 +25,7 @@ class App extends React.Component {
         },
         animationAcademy:
         {
+          url: 'animation-academy',
           name: 'Animation Academy',
           height: 'Any Height',
           type: ['Character Experience', 'Discovery', 'Indoor', 'Interactive'],
@@ -32,6 +34,7 @@ class App extends React.Component {
         },
         autopia:
         {
+          url: 'autopia',
           name: 'Autopia',
           height: '32in (81cm) or taller',
           type: ['Slow Rides', 'Loud', '1955 Original Ride', 'Interactive', 'Rider Switch'],

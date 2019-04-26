@@ -3,20 +3,41 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import MainPage from './MainPage';
 import AttractionList from './AttractionList';
-import Error404 from './Error404'; 
+import Error404 from './Error404';
 
-function App() {
-  return(
-    <div>
-      <Navbar />
-      <Switch>
-        <Route exact path='/' component={MainPage} />
-        <Route path='/attractions' component={AttractionList} />
-        <Route path='/attractions/:attractionId' component={AttractionList} />
-        <Route component={Error404} />
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      adults: 2,
+      children: 0
+    }
+    this.handleAdult = this.handleAdult.bind(this);
+    this.handleChildren = this.handleChildren.bind(this);
+  }
+
+  handleAdult(newNum) {
+    this.setState({adults: newNum});
+  }
+
+  handleChildren(newNum) {
+    this.setState({children: newNum})
+  }
+
+  render() {
+    return(
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult}} onChildren={this.handleChildren}/>} />
+          <Route path='/attractions' component={AttractionList} />
+          <Route path='/attractions/:attractionId' component={AttractionList} />
+          <Route component={Error404} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;

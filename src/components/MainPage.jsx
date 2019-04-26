@@ -1,6 +1,7 @@
 import React from 'react';
 import VacationBar from './VacationBar';
 import VideoDisplay from './VideoDisplay';
+import PropTypes from 'prop-types';
 
 function MainPage() {
   return (
@@ -27,6 +28,11 @@ function MainPage() {
       </div>
     </div>
   );
+}
+
+MainPage.propTypes = {
+  onAdult: PropTypes.func,
+  onChildren: PropTypes.func
 }
 
 export default MainPage;

@@ -30,23 +30,17 @@ import PropTypes from 'prop-types';
 // ];
 
 function AttractionList(props) {
-  const test = Object.keys(props.masterAttractionList).map(function (attractionId) {
-    const attraction = props.masterAttractionList[attractionId];
-  });
-  console.log(test);
   return(
     <div>
       <hr />
-      {Object.keys(props.masterAttractionList).map(function (attractionId) {
+      {Object.keys(props.masterAttractionList).forEach(function (attractionId) {
         const attraction = props.masterAttractionList[attractionId];
+        console.log(attraction.height);
         return
           <Attractions name={attraction.name}
-            id={attraction.id}
             height={attraction.height}
             type={attraction.type}
-            location={attraction.location}
-            attractionId={attractionId}
-            key={index} />;
+            location={attraction.location} />
       })}
       <p>Working on new things</p>
     </div>

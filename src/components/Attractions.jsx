@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Attractions(props) {
+  console.log(props.name);
   return(
     <div>
       <Link to={'/attractions/' + props.id}>
@@ -17,7 +18,6 @@ function Attractions(props) {
 }
 
 Attractions.propTypes = {
-  id: PropTypes.string,
   name: PropTypes.string,
   height: PropTypes.string,
   type: PropTypes.array,

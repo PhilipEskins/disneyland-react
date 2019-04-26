@@ -12,7 +12,33 @@ class App extends React.Component {
     super(props);
     this.state = {
       adults: 2,
-      children: 0
+      children: 0,
+      masterAttractionList: {
+        aliceInWonderland:
+        {
+          name: 'Alice in Wonderland',
+          height: 'Any Height',
+          type: ['Slow Rides', 'Dark', 'Loud'],
+          location: 'Disneyland Park, Fantasyland',
+          teaser: 'Take a topsy-turvy trip into the nonsensical world of Disney’s Alice in Wonderland aboard an oversized caterpillar.'
+        },
+        animationAcademy:
+        {
+          name: 'Animation Academy',
+          height: 'Any Height',
+          type: ['Character Experience', 'Discovery', 'Indoor', 'Interactive'],
+          location: 'Disney California Adventure Park, Hollywood Land',
+          teaser: 'Draw your very own character sketch under the guidance of a talented animator.'
+        },
+        autopia:
+        {
+          name: 'Autopia',
+          height: '32in (81cm) or taller',
+          type: ['Slow Rides', 'Loud', '1955 Original Ride', 'Interactive', 'Rider Switch'],
+          location: 'Disneyland Park, Tomorrowland',
+          teaser: 'Put the pedal to the metal on an unforgettable road trip along a miniature motorway.'
+        }
+      }
     };
     this.handleAdult = this.handleAdult.bind(this);
     this.handleChildren = this.handleChildren.bind(this);
@@ -32,7 +58,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult} onChildren={this.handleChildren} adultNum={this.state.adults} childrenNum={this.state.children}/>} />
-          <Route exact path='/attractions' component={AttractionList} />
+          <Route exact path='/attractions' render={()=> <AttractionList masterAttractionList={this.state.masterAttractionList}/>} />
           <Route path='/attractions/:attractionId' component={AttractionDetail} />
           <Route component={Error404} />
         </Switch>

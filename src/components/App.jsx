@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import MainPage from './MainPage';
 import AttractionList from './AttractionList';
+import AttractionDetail from './AttractionDetail';
 import Error404 from './Error404';
 
 class App extends React.Component {
@@ -31,8 +32,8 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult} onChildren={this.handleChildren} adultNum={this.state.adults} childrenNum={this.state.children}/>} />
-          <Route path='/attractions' component={AttractionList} />
-          <Route path='/attractions/:attractionId' component={AttractionList} />
+          <Route exact path='/attractions' component={AttractionList} />
+          <Route path='/attractions/:attractionId' component={AttractionDetail} />
           <Route component={Error404} />
         </Switch>
       </div>

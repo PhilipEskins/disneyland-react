@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 function VacationBar(props) {
 
+  //This function either adds or subtracts numbers and updates either children or adults
+
   function adjustPeople(number, action, person) {
     if(action === 'add') {
       number++;
@@ -19,6 +21,8 @@ function VacationBar(props) {
       props.onAdult(number);
     }
   }
+
+  //This function takes in two paramaters in order to know if we are adjusting adults or children
 
   function peoplePicker(person, action) {
     if (person === 'children') {

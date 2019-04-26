@@ -5,10 +5,12 @@ import PropTypes from 'prop-types';
 function Attractions(props) {
   return(
     <div>
-      <h3>{props.name}</h3>
-      <p>{props.height}</p>
-      <p>{props.type.join(', ')}</p>
-      <p>{props.location}</p>
+      <Link to={'/attractions/' + props.id}>
+        <h3>{props.name}</h3>
+        <p>{props.height}</p>
+        <p>{props.type.join(', ')}</p>
+        <p>{props.location}</p>
+      </Link>
       <hr />
     </div>
   );
@@ -19,7 +21,7 @@ Attractions.propTypes = {
   name: PropTypes.string,
   height: PropTypes.string,
   type: PropTypes.array,
-  location: PropTypes.location,
+  location: PropTypes.string,
 };
 
 export default Attractions;

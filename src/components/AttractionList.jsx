@@ -30,28 +30,40 @@ import PropTypes from 'prop-types';
 // ];
 
 function AttractionList(props) {
-  return(
+  return (
     <div>
-      <hr />
-      {Object.keys(props.masterAttractionList).forEach(function (attractionId) {
+      <hr/>
+      {Object.keys(props.masterAttractionList).map(function (attractionId) {
         const attraction = props.masterAttractionList[attractionId];
-        console.log(attraction.height);
-        return
-          <Attractions name={attraction.name}
-            height={attraction.height}
-            type={attraction.type}
-            location={attraction.location} />
+        return <Attractions name = {attraction.name}
+          location = {attraction.location}
+          height = {attraction.height}
+          type = {attraction.type}
+        />;
       })}
-      <p>Working on new things</p>
     </div>
   );
 }
 // {props.masterAttractionList.map((attraction, index) =>
-  // )}
+// )}
 
 AttractionList.propTypes = {
   masterAttractionList: PropTypes.object,
   attractionId: PropTypes.string
-}
+};
 
 export default AttractionList;
+
+// return (
+//   <div>
+//     {Object.keys(props.masterAttractionList).forEach(function (attractionId) {
+//       const attraction = props.masterAttractionList[attractionId];
+//       return <Attractions name={attraction.name}
+//         height={attraction.height}
+//         type={attraction.type}
+//         location={attraction.location} />;
+//     })}
+//     <p>Working on new things</p>
+//     <hr />
+//   </div>
+// );

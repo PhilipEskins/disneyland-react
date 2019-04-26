@@ -3,11 +3,29 @@ import PropTypes from 'prop-types';
 
 function VacationBar(props) {
 
-  function adjustAdult() {
-    let newAdultNum = props.adultNum
-    newAdultNum++;
-    console.log(newAdultNum);
-    props.onAdult(newAdultNum);
+  function adjustPeople(number, action, person) {
+    if(action === 'add') {
+      number++;
+    } else if (action === 'sub') {
+      if (number === 0) {
+        number = 0;
+      } else {
+        number--;
+      }
+    }
+    if (person === 'child') {
+      props.onChildren(number);
+    } else {
+      props.onAdult(number);
+    }
+  }
+
+  function peoplePicker(person, action) {
+    if (person === 'children') {
+      adjustPeople(props.childrenNum, action, 'child');
+    } else {
+      adjustPeople(props.adultNum, action, 'adult');
+    }
   }
 
   return(
@@ -67,15 +85,15 @@ function VacationBar(props) {
         <input type="date" className="dateInput" />
         <span className="adultTitle">Adults(18+)</span>
         <div className="adult">
-          <button className="adultSub">-</button>
+          <button className="adultSub" onClick={()=>peoplePicker('adult', 'sub')}>-</button>
           <span className="adultNum">{props.adultNum}</span>
-          <button className="adultAdd" onClick={adjustAdult}>+</button>
+          <button className="adultAdd" onClick={()=>peoplePicker('adult', 'add')}>+</button>
         </div>
         <span className="childTitle">Children</span>
         <div className="child">
-          <button className="childSub">-</button>
+          <button className="childSub" onClick={()=>peoplePicker('children', 'sub')}>-</button>
           <span className="childNum">{props.childrenNum}</span>
-          <button className="childAdd">+</button>
+          <button className="childAdd" onClick={()=>peoplePicker('children', 'add')}>+</button>
         </div>
         <span className="hotelTitle">Hotel</span>
         <select className="hotelSelect">
@@ -93,6 +111,6 @@ VacationBar.propTypes = {
   onChildren: PropTypes.func,
   adultNum: PropTypes.number,
   childrenNum: PropTypes.number
-}
+};
 
 export default VacationBar;

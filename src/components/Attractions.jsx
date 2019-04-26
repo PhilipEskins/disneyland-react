@@ -7,7 +7,7 @@ function Attractions(props) {
     <div>
       <h3>{props.name}</h3>
       <p>{props.height}</p>
-      <p>{props.type.join(", ")}</p>
+      <p>{props.type.join(', ')}</p>
       <p>{props.location}</p>
       <hr />
     </div>

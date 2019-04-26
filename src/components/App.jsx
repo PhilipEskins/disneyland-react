@@ -12,18 +12,17 @@ class App extends React.Component {
     this.state = {
       adults: 2,
       children: 0
-    }
+    };
     this.handleAdult = this.handleAdult.bind(this);
     this.handleChildren = this.handleChildren.bind(this);
   }
 
   handleAdult(newNum) {
-    console.log(newNum);
     this.setState({adults: newNum});
   }
 
   handleChildren(newNum) {
-    this.setState({children: newNum})
+    this.setState({children: newNum});
   }
 
   render() {

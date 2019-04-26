@@ -35,6 +35,6 @@ MainPage.propTypes = {
   onChildren: PropTypes.func,
   adultNum: PropTypes.number,
   childrenNum: PropTypes.number
-}
+};
 
 export default MainPage;

@@ -23,6 +23,9 @@ _This application is my attempt at cloning http://www.disneyland.com_
 
 ## Process
 
+#### Sunday 4/28/19
+_Was able to punch through the wall and figure out how to make the attraction detail page get the information it needed to display. I also was able to build out the offers section. Its not 100% correct but it just will take a little more time for styling._
+
 #### Friday 4/26/19
 _Got off to a great start with the project. Was able to get the buttons to add and remove people from the vacation bar. After that I tried to tackle displaying more details of attractions after you click on them. I ran into a wall and my brain sort of shut down. I came into the project with an idea of how to make it work, but it didn't pan out. Will think on it more over the weekend and if I still can't figure it out will get some assistance on Monday. Started work on the offers section in the meantime._
 

@@ -49,32 +49,33 @@ class App extends React.Component {
     this.handleChangingSelectedAttraction = this.handleChangingSelectedAttraction.bind(this);
   }
 
+  //This updates the adult numbers
   handleAdult(newNum) {
     this.setState({adults: newNum});
   }
 
+  //This updates the children numbers
   handleChildren(newNum) {
     this.setState({children: newNum});
   }
 
+  //This sets the selectedAttraction so AttractionDetail knows what to display
   handleChangingSelectedAttraction(attractionId){
     this.setState({selectedAttraction: attractionId});
   }
 
   render() {
-    // if (this.state.selectedAttraction != null) {
-    //   let storage = this.state.masterAttractionList;
-    //   let temp = this.state.selectedAttraction;
-    //   let name = storage + temp;
-    //   console.log(name)
-    // }
+    let attractionName = null;
+    if (this.state.selectedAttraction != null) {
+      attractionName = this.state.masterAttractionList[this.state.selectedAttraction];
+    }
     return(
       <div>
         <Navbar />
         <Switch>
           <Route exact path='/' render={()=><MainPage onAdult={this.handleAdult} onChildren={this.handleChildren} adultNum={this.state.adults} childrenNum={this.state.children}/>} />
           <Route exact path='/attractions' render={()=> <AttractionList masterAttractionList={this.state.masterAttractionList} selectedAttraction={this.state.selectedAttraction} onChangingSelectedAttraction={this.handleChangingSelectedAttraction}/>} />
-          <Route path='/attractions/:attractionId' component={AttractionDetail} />
+          <Route path='/attractions/:attractionId' render={() => <AttractionDetail attractionName = {attractionName} /> } />
           <Route component={Error404} />
         </Switch>
       </div>

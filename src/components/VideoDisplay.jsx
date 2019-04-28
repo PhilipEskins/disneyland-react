@@ -7,13 +7,14 @@ function VideoDisplay() {
       <style jsx>{`
         .wrapper {
           display: grid;
-          grid: 1fr 1fr / 1fr;
+          grid: 1fr 1fr / 100vw;
         }
         .disneyVid {
           grid-row: 1/3;
           grid-column: 1;
           justify-self: center;
           z-index: -1;
+          width: 100%;
         }
         .vidBanner {
           grid-row: 1;
